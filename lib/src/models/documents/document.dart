@@ -55,6 +55,9 @@ class Document {
       {int replaceLength = 0, bool autoAppendNewlineAfterImage = true}) {
     assert(index >= 0);
     assert(data is String || data is Embeddable);
+    
+    print('document insert: $index $data');
+
     if (data is Embeddable) {
       data = data.toJson();
     } else if ((data as String).isEmpty) {
@@ -68,6 +71,7 @@ class Document {
     return delta;
   }
 
+  // 删除文本
   Delta delete(int index, int len) {
     assert(index >= 0 && len > 0);
     final delta = _rules.apply(RuleType.DELETE, this, index, len: len);
