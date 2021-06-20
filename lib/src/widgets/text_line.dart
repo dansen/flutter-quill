@@ -188,7 +188,7 @@ class TextLine extends StatelessWidget {
       final backgroundColor = stringToColor(background.value);
       res = res.merge(TextStyle(backgroundColor: backgroundColor));
     }
-
+    print("text span:$textNode.value $res");
     return TextSpan(text: textNode.value, style: res);
   }
 

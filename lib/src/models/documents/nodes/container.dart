@@ -6,7 +6,7 @@ import 'line.dart';
 import 'node.dart';
 
 /// Container can accommodate other nodes.
-///
+/// 
 /// Delegates insert, retain and delete operations to children nodes. For each
 /// operation container looks for a child at specified index position and
 /// forwards operation to that child.
@@ -113,6 +113,7 @@ abstract class Container<T extends Node?> extends Node {
 
   @override
   void insert(int index, Object data, Style? style) {
+    print("insert data:$index, $data $style");
     assert(index == 0 || (index > 0 && index < length));
 
     if (isNotEmpty) {

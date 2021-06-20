@@ -3,6 +3,7 @@ import 'container.dart';
 import 'line.dart';
 import 'node.dart';
 
+// 
 /// Represents a group of adjacent [Line]s with the same block style.
 ///
 /// Block elements are:

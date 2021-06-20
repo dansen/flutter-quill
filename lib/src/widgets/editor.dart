@@ -608,6 +608,8 @@ class RenderEditor extends RenderEditableContainerBox
   }
 
   void setSelection(TextSelection t) {
+    print("set selection $t");
+
     if (selection == t) {
       return;
     }
@@ -839,6 +841,7 @@ class RenderEditor extends RenderEditableContainerBox
 
   @override
   void paint(PaintingContext context, Offset offset) {
+    print("editor paint $offset");
     defaultPaint(context, offset);
     _paintHandleLayers(context, getEndpointsForSelection(selection));
   }
